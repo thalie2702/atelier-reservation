@@ -47,7 +47,7 @@ useEffect(() => {
     JSON.stringify(atelierEvents)
   );
 }, [atelierEvents]);
-const [eventDates, setEventDates] = useState<string[]>(() => {
+const [eventDates] = useState<string[]>(() => {
   const saved = localStorage.getItem('atelierEventDates');
   if (saved) {
     try {
@@ -212,11 +212,7 @@ const availableMakeupCredits = makeupCreditList.filter(
     new Date(credit.expiresAt) >= new Date()
 );
 
-const sortedMakeupCredits = [...availableMakeupCredits].sort(
-  (a, b) =>
-    new Date(a.expiresAt).getTime() -
-    new Date(b.expiresAt).getTime()
-);
+
 const totalReserved = reservations.reduce((total, reservation) => {
 const match = reservation.match(/（(\d+)回）/);
   return total + (match ? Number(match[1]) : 0);
