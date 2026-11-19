@@ -1,0 +1,135 @@
+.forest-header {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center bottom;
+  margin: 0 auto 24px;
+}
+/* アトリエ予約画面 */
+
+body {
+  background-color: #f7f5ed;
+  color: #303e38;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+  color: #303e38;
+  margin: 24px 0 12px;
+}
+
+h2 {
+  font-size: 22px;
+  color: #496553;
+  margin: 16px 0;
+}
+
+h3 {
+  font-size: 18px;
+  color: #496553;
+  margin: 24px 0 12px;
+}
+
+button,
+select {
+  font-size: 16px;
+  padding: 10px 16px;
+  border: 1px solid #9bab9f;
+  border-radius: 8px;
+  background-color: white;
+  color: #303e38;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e5eee7;
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid #496553;
+  outline-offset: 2px;
+}
+
+/* 予約カレンダー */
+.calendar {
+  max-width: 490px;
+  margin: 24px auto 32px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #d5dfd6;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #496553;
+}
+
+.calendar-nav button {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 0;
+  color: #496553;
+}
+
+.calendar-grid button {
+  min-width: 0;
+  padding: 10px 0;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.event-day {
+  background: #dcece0;
+  color: #304b3c;
+  border: 1px solid #8eae98;
+  font-weight: bold;
+}
+
+.normal-day {
+  background: #f7f5ed;
+  color: #a0a0a0;
+  border: 1px solid transparent;
+}
+
+.calendar-grid button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.event-day:hover {
+  background: #c5dfcc;
+}
+
+@media (max-width: 480px) {
+  .calendar {
+    padding: 10px;
+  }
+
+  .calendar-grid {
+    gap: 3px;
+  }
+
+  .calendar-grid button {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+}
